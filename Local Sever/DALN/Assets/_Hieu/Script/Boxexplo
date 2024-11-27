@@ -1,0 +1,377 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ExplosiveBarrel : MonoBehaviour
+{
+    [Header("Explosion Settings")]
+    [SerializeField] private float explosionRadius = 3f;
+    [SerializeField] private float explosionForce = 500f;
+    [SerializeField] private float damage = 50f;
+    [Min(0.1f)]
+    [SerializeField] private float destroyDelay = 0.2f;
+    
+    [Header("Visual Effects")]
+    [SerializeField] private GameObject explosionEffectPrefab;
+
+    [Header("Item Drop Settings")]
+    public enum PowerUpType
+    {
+        SpeedBoost,
+        Shield,
+        ExplosionUpgrade,
+        Invincibility
+    }
+
+    [System.Serializable]
+    public class PowerUpItem
+    {
+        public GameObject itemPrefab;
+        public PowerUpType powerUpType;
+        [Range(0, 100)]
+        public float dropRate;
+        public float duration; // Thời gian hiệu lực của power-up
+        public float powerUpValue; // Giá trị tăng cường (ví dụ: % tăng tốc độ)
+    }
+
+    [SerializeField] private PowerUpItem[] powerUpItems;
+    [SerializeField] private Vector2 dropOffset = Vector2.zero;
+    [SerializeField] private float spawnAnimationDuration = 0.5f;
+    
+    private bool hasExploded = false;
+
+    private void Awake()
+    {
+        InitializePowerUps();
+        ValidateDropRates();
+    }
+
+    private void InitializePowerUps()
+    {
+        // Khởi tạo danh sách 4 power-up với các giá trị mặc định
+        powerUpItems = new PowerUpItem[]
+        {
+            new PowerUpItem
+            {
+                powerUpType = PowerUpType.SpeedBoost,
+                dropRate = 25f,
+                duration = 5f,
+                powerUpValue = 50f // Tăng 50% tốc độ
+            },
+            new PowerUpItem
+            {
+                powerUpType = PowerUpType.Shield,
+                dropRate = 25f,
+                duration = 7f,
+                powerUpValue = 100f // Giảm 100% sát thương
+            },
+            new PowerUpItem
+            {
+                powerUpType = PowerUpType.ExplosionUpgrade,
+                dropRate = 25f,
+                duration = 10f,
+                powerUpValue = 1f // Tăng bán kính nổ thêm 1 đơn vị
+            },
+            new PowerUpItem
+            {
+                powerUpType = PowerUpType.Invincibility,
+                dropRate = 25f,
+                duration = 3f, // Bất tử trong 3 giây
+                powerUpValue = 100f // Miễn nhiễm 100% sát thương
+            }
+        };
+    }
+
+    private void ValidateDropRates()
+    {
+        if (powerUpItems == null || powerUpItems.Length != 4)
+        {
+            Debug.LogError($"[{gameObject.name}] Please configure exactly 4 power-up items!");
+            return;
+        }
+
+        float totalRate = 0;
+        for (int i = 0; i < powerUpItems.Length; i++)
+        {
+            if (powerUpItems[i].itemPrefab == null)
+            {
+                Debug.LogError($"[{gameObject.name}] Power-up prefab at index {i} is null!");
+                continue;
+            }
+            totalRate += powerUpItems[i].dropRate;
+        }
+
+        if (Mathf.Abs(totalRate - 100f) > 0.01f)
+        {
+            Debug.LogWarning($"[{gameObject.name}] Total drop rates ({totalRate:F1}%) does not equal 100%. This may cause unexpected behavior.");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!hasExploded && (other.CompareTag("Bomb") || other.CompareTag("Explosion")))
+        {
+            Explode();
+        }
+    }
+
+    public void Explode()
+    {
+        if (hasExploded) return;
+        hasExploded = true;
+
+        SpawnExplosionEffect();
+        HandleExplosionDamage();
+        SpawnRandomPowerUp();
+        
+        Destroy(gameObject, Mathf.Max(0.1f, destroyDelay));
+    }
+
+    private void SpawnExplosionEffect()
+    {
+        if (explosionEffectPrefab != null)
+        {
+            Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
+        }
+    }
+
+    private void HandleExplosionDamage()
+    {
+        var colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+        
+        foreach (var hit in colliders)
+        {
+            if (hit.gameObject == gameObject) continue;
+
+            ApplyExplosionForce(hit);
+            ApplyDamage(hit);
+        }
+    }
+
+    private void ApplyExplosionForce(Collider2D hit)
+    {
+        var rb = hit.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            Vector2 direction = (hit.transform.position - transform.position).normalized;
+            float distance = Vector2.Distance(transform.position, hit.transform.position);
+            float forceMagnitude = explosionForce * (1 - (distance / explosionRadius));
+            rb.AddForce(direction * Mathf.Max(0, forceMagnitude), ForceMode2D.Impulse);
+        }
+    }
+
+    private void ApplyDamage(Collider2D hit)
+    {
+        if (hit.TryGetComponent<IDamageable>(out var damageable))
+        {
+            float distance = Vector2.Distance(transform.position, hit.transform.position);
+            float damageAmount = damage * (1 - (distance / explosionRadius));
+            damageable.TakeDamage(Mathf.Max(0, damageAmount));
+        }
+    }
+
+    private void SpawnRandomPowerUp()
+    {
+        if (powerUpItems == null || powerUpItems.Length == 0) return;
+
+        float randomValue = Random.Range(0f, 100f);
+        float currentRate = 0f;
+
+        foreach (var powerUp in powerUpItems)
+        {
+            currentRate += powerUp.dropRate;
+            if (randomValue <= currentRate && powerUp.itemPrefab != null)
+            {
+                Vector2 spawnPosition = (Vector2)transform.position + dropOffset;
+                SpawnPowerUp(powerUp, spawnPosition);
+                break;
+            }
+        }
+    }
+
+    private void SpawnPowerUp(PowerUpItem powerUp, Vector2 position)
+    {
+        var powerUpObject = Instantiate(powerUp.itemPrefab, position, Quaternion.identity);
+        if (powerUpObject != null)
+        {
+            // Gán thông tin power-up vào object được spawn
+            var powerUpComponent = powerUpObject.GetComponent<PowerUpEffect>();
+            if (powerUpComponent != null)
+            {
+                powerUpComponent.Initialize(powerUp.powerUpType, powerUp.duration, powerUp.powerUpValue);
+            }
+            
+            StartCoroutine(PlaySpawnAnimation(powerUpObject));
+        }
+    }
+
+    private IEnumerator PlaySpawnAnimation(GameObject item)
+    {
+        if (item == null) yield break;
+
+        float elapsed = 0f;
+        Vector3 startScale = Vector3.zero;
+        Vector3 targetScale = Vector3.one;
+
+        while (elapsed < spawnAnimationDuration)
+        {
+            if (item == null) yield break;
+
+            elapsed += Time.deltaTime;
+            float progress = elapsed / spawnAnimationDuration;
+            item.transform.localScale = Vector3.Lerp(startScale, targetScale, progress);
+            yield return null;
+        }
+
+        if (item != null)
+        {
+            item.transform.localScale = targetScale;
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = new Color(1f, 0f, 0f, 0.3f);
+        Gizmos.DrawSphere(transform.position, explosionRadius);
+        
+        Gizmos.color = new Color(0f, 1f, 0f, 0.5f);
+        Gizmos.DrawWireSphere((Vector2)transform.position + dropOffset, 0.2f);
+    }
+
+    private void OnValidate()
+    {
+        explosionRadius = Mathf.Max(0.1f, explosionRadius);
+        explosionForce = Mathf.Max(0f, explosionForce);
+        damage = Mathf.Max(0f, damage);
+        destroyDelay = Mathf.Max(0.1f, destroyDelay);
+        spawnAnimationDuration = Mathf.Max(0.1f, spawnAnimationDuration);
+    }
+}
+
+// Interface cho các đối tượng có thể nhận damage
+public interface IDamageable
+{
+    void TakeDamage(float damage);
+}
+
+// Component để xử lý hiệu ứng của power-up
+public class PowerUpEffect : MonoBehaviour
+{
+    private ExplosiveBarrel.PowerUpType powerUpType;
+    private float duration;
+    private float powerUpValue;
+
+    public void Initialize(ExplosiveBarrel.PowerUpType type, float duration, float value)
+    {
+        this.powerUpType = type;
+        this.duration = duration;
+        this.powerUpValue = value;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            ApplyPowerUpEffect(other.gameObject);
+            Destroy(gameObject);
+        }
+    }
+
+    private void ApplyPowerUpEffect(GameObject player)
+    {
+        var playerPowerUpManager = player.GetComponent<PlayerPowerUpManager>();
+        if (playerPowerUpManager != null)
+        {
+            playerPowerUpManager.ActivatePowerUp(powerUpType, duration, powerUpValue);
+        }
+    }
+}
+
+// Component để quản lý power-up trên player
+public class PlayerPowerUpManager : MonoBehaviour
+{
+    public void ActivatePowerUp(ExplosiveBarrel.PowerUpType type, float duration, float value)
+    {
+        StartCoroutine(PowerUpRoutine(type, duration, value));
+    }
+
+    private IEnumerator PowerUpRoutine(ExplosiveBarrel.PowerUpType type, float duration, float value)
+    {
+        // Áp dụng hiệu ứng power-up
+        switch (type)
+        {
+            case ExplosiveBarrel.PowerUpType.SpeedBoost:
+                ApplySpeedBoost(value);
+                break;
+            case ExplosiveBarrel.PowerUpType.Shield:
+                ApplyShield(value);
+                break;
+            case ExplosiveBarrel.PowerUpType.ExplosionUpgrade:
+                ApplyExplosionUpgrade(value);
+                break;
+            case ExplosiveBarrel.PowerUpType.Invincibility:
+                ApplyInvincibility();
+                break;
+        }
+
+        yield return new WaitForSeconds(duration);
+
+        // Hủy hiệu ứng power-up
+        switch (type)
+        {
+            case ExplosiveBarrel.PowerUpType.SpeedBoost:
+                RemoveSpeedBoost();
+                break;
+            case ExplosiveBarrel.PowerUpType.Shield:
+                RemoveShield();
+                break;
+            case ExplosiveBarrel.PowerUpType.ExplosionUpgrade:
+                RemoveExplosionUpgrade();
+                break;
+            case ExplosiveBarrel.PowerUpType.Invincibility:
+                RemoveInvincibility();
+                break;
+        }
+    }
+
+    // Implement các phương thức xử lý power-up cụ thể
+    private void ApplySpeedBoost(float speedIncrease) 
+    {
+        // Tăng tốc độ di chuyển của player
+    }
+
+    private void ApplyShield(float damageReduction)
+    {
+        // Kích hoạt khiên bảo vệ
+    }
+
+    private void ApplyExplosionUpgrade(float radiusIncrease)
+    {
+        // Tăng bán kính nổ của bomb
+    }
+
+    private void ApplyInvincibility()
+    {
+        // Kích hoạt trạng thái bất tử
+    }
+
+    private void RemoveSpeedBoost()
+    {
+        // Khôi phục tốc độ về bình thường
+    }
+
+    private void RemoveShield()
+    {
+        // Tắt khiên bảo vệ
+    }
+
+    private void RemoveExplosionUpgrade()
+    {
+        // Khôi phục bán kính nổ về bình thường
+    }
+
+    private void RemoveInvincibility()
+    {
+        // Tắt trạng thái bất tử
+    }
+}

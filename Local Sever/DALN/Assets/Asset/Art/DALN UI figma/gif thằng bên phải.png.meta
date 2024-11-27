@@ -1,0 +1,703 @@
+fileFormatVersion: 2
+guid: 831b2aec5d794ac42a94688332dc37b2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1500
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58daae160c49c90428ef2e4b3e8d3152
+      internalID: -641146336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_1"
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1500
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5eded07fe84b76408bbd37f2ad034ea
+      internalID: -1127317916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_2"
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1500
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdeaf7b6fe16d704789c145c6721c6ee
+      internalID: 1943321593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_3"
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1500
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a0844a2d91531a4cb21a18f975638ef
+      internalID: -540890704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_4"
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1500
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31220d8bd2c592840889333e090b7f00
+      internalID: -1543240326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_5"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1125
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6608b24535c95e4085fd923abd54fb0
+      internalID: 1134583504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_6"
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1125
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41eb8cdca17a75449a2328fd5456edaa
+      internalID: 1193672614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_7"
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1125
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6605bfba5e78904e99f3ecaf901968d
+      internalID: -1147803168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_8"
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1125
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f2dfb31a381dd4982b3c42d63a2658
+      internalID: 2073835295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_9"
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1125
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87126e57c9285d9468925cc1b5a785b4
+      internalID: -1320829999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_10"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 750
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7992c882c7828f4b9ff3264450b77d6
+      internalID: -1612326898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_11"
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 750
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0b86fde8220094c9401b1ac31406fe
+      internalID: -1489872393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_12"
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 750
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31fefa7013fe96459077df9072c1bbc
+      internalID: -140327457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_13"
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 750
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff8d83ab38075d45a9e7d1ba10514c5
+      internalID: -1882226208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_14"
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 750
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01fa94c6ee737994390c48ba6ff3a7ef
+      internalID: 1751571271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_15"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 375
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d7567f021b2ee4aa331a534a13e47c
+      internalID: 1258044664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_16"
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 375
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 886c5d7f2d71ac04dab849c44013215d
+      internalID: -143521961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_17"
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 375
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4021b240357f0454b98e5e2d70c8fcf5
+      internalID: 1147475879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_18"
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 375
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a725cbed773be474a9674c394d712d63
+      internalID: 1555980939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_19"
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 375
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e863cc41e3b3648a0b84dad64404e8
+      internalID: -859375685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_20"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae21d1d9660d8a644a7b2bc000af8d5e
+      internalID: 1601870288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_21"
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda65fb26a0b3f542b2f65270873777d
+      internalID: 325959792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_22"
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7966b0d4d6bece4bb134bc8314112ab
+      internalID: 464978306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_23"
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6686cd3d999344e8bd60ed3bed42c1
+      internalID: 43951217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "gif th\u1EB1ng b\xEAn ph\u1EA3i_24"
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 360
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f32006392ba1fc44b78549863d49cd3
+      internalID: 883414305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_0": -641146336
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_1": -1127317916
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_10": -1612326898
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_11": -1489872393
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_12": -140327457
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_13": -1882226208
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_14": 1751571271
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_15": 1258044664
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_16": -143521961
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_17": 1147475879
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_18": 1555980939
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_19": -859375685
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_2": 1943321593
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_20": 1601870288
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_21": 325959792
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_22": 464978306
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_23": 43951217
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_24": 883414305
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_3": -540890704
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_4": -1543240326
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_5": 1134583504
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_6": 1193672614
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_7": -1147803168
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_8": 2073835295
+      "gif th\u1EB1ng b\xEAn ph\u1EA3i_9": -1320829999
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
